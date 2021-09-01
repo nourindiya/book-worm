@@ -2,13 +2,19 @@
 const inputFeild = document.getElementById('input-feild');
 const searchBtn = document.getElementById('button-addon2');
 const bookSection = document.getElementById('book-container');
-const errorDiv = document.getElementById('error-div');
+const error = document.getElementById('error');
 
 // Result Showing Div
 const result = document.getElementById('search-result');
 
 searchBtn.addEventListener('click', function () {
     const input = inputFeild.value;
+    // Empty input Error
+    if (input === "") {
+        error.innerText = "Input Can't be Empty"
+        return;
+    };
+
 
     // Clear Book section
     bookSection.innerHTML = "";
@@ -24,12 +30,16 @@ searchBtn.addEventListener('click', function () {
 
 
 function displayBooks(books) {
-    result.innerHTML = `Search Result :${books.numFound}`
-    // console.log(books.numFound);
-    // const h3 = document.createComment('h3');
-    // h3.innerText = `Search Result :${books.numFound}`;
-    // result.appendChild(h3);
+    // Error of Invalidity
+    if (books.numFound === 0) {
+        error.innerText = "Use Valid Input"
+    }
+    else {
+        error.innerText = "";
+    };
 
+    //  Search Result
+    result.innerHTML = `Search Result :${books.numFound}`
 
 
     const book = books.docs;
