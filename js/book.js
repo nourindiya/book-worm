@@ -15,7 +15,6 @@ searchBtn.addEventListener('click', function () {
         return;
     };
 
-
     // Clear Book section
     bookSection.innerHTML = "";
     result.innerHTML = "";
