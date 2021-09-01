@@ -3,8 +3,6 @@ const inputFeild = document.getElementById('input-feild');
 const searchBtn = document.getElementById('button-addon2');
 const bookSection = document.getElementById('book-container');
 const error = document.getElementById('error');
-
-// Result Showing Div
 const result = document.getElementById('search-result');
 
 searchBtn.addEventListener('click', function () {
@@ -15,7 +13,7 @@ searchBtn.addEventListener('click', function () {
         return;
     };
 
-    // Clear Book section
+    // Clear Book section $ result
     bookSection.innerHTML = "";
     result.innerHTML = "";
 
