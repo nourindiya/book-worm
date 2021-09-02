@@ -11,6 +11,8 @@ searchBtn.addEventListener('click', function () {
     // Empty input Error
     if (input === "") {
         error.innerText = "Input Can't be Empty"
+        bookSection.innerHTML = "";
+        result.innerHTML = "";
         return;
     };
 
