@@ -7,18 +7,19 @@ const result = document.getElementById('search-result');
 
 searchBtn.addEventListener('click', function () {
     const input = inputFeild.value;
+
     // Empty input Error
     if (input === "") {
         error.innerText = "Input Can't be Empty"
         return;
     };
 
-    // Clear Book section $ result
+    // Clear Book section & result
     bookSection.innerHTML = "";
     result.innerHTML = "";
 
     // fetching
-    const url = `http://openlibrary.org/search.json?q=${input}`
+    const url = `https://openlibrary.org/search.json?q=${input}`
     fetch(url)
         .then(res => res.json())
         .then(data => displayBooks(data))
